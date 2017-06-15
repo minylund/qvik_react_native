@@ -1,0 +1,25 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node":  true,
+        "es6": true
+    },
+    "plugins": [
+        "react",
+        "react-native"
+    ],
+    {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-native/all"
+    ],
+    "rules": {
+      // overwrites
+    }
+}
