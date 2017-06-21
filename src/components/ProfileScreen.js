@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import { Text, View, StyleSheet, Platform } from 'react-native';
 import PropTypes from 'prop-types';

@@ -1,8 +1,7 @@
+//@flow
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { colorStyles, textStyles } from '../styles';
-
-
 
 class RegisterScreen extends Component {
   static navigationOptions = {
@@ -19,10 +18,6 @@ class RegisterScreen extends Component {
       backgroundColor: colorStyles.brand.primary,
     }
   };
-
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

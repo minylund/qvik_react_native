@@ -1,12 +1,19 @@
-import React from 'react';
+//@flow
+import React, { Component } from 'react';
 import { Text, View, StyleSheet, Platform } from 'react-native';
 import { colorStyles, textStyles } from '../styles';
 
-const MainScreen = () => (
-  <View style={styles.mainHolder}>
-    <Text style={styles.title}>Main</Text>
-  </View>
-);
+class MainScreen extends Component {
+
+  render() {
+    return (
+      <View style={styles.mainHolder}>
+        <Text style={styles.title}>Main</Text>
+      </View>
+    );
+  }
+}
+
 
 export default MainScreen;
 
