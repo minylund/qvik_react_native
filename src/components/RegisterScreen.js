@@ -1,6 +1,7 @@
 //@flow
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { injectIntl, FormattedMessage } from 'react-intl';
 import { colorStyles, textStyles } from '../styles';
 
 class RegisterScreen extends Component {
@@ -19,18 +20,35 @@ class RegisterScreen extends Component {
     }
   };
 
+  constructor(props) {
+    super(props);
+
+    this.formatMessage = this.props.intl.formatMessage.bind(this);
+
+    RegisterScreen.navigationOptions.title = this.formatMessage({
+      id: "register.label",
+      defaultMessage: "Register"
+     });
+  }
+
   render() {
     return (
         <View style={styles.mainHolder}>
           <Text style={styles.text}>
-            Register
+            <FormattedMessage
+              id="register.label"
+              defaultMessage={'Register'}
+              />
           </Text>
         </View>
     )
   }
 }
 
-export default RegisterScreen;
+let injectRegisterScreen = injectIntl(RegisterScreen);
+Object.assign(injectRegisterScreen, RegisterScreen);
+
+export default injectRegisterScreen;
 
 const styles = StyleSheet.create({
   mainHolder: {

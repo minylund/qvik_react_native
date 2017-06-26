@@ -4,8 +4,14 @@ import PropTypes from 'prop-types';
 import { TouchableOpacity, Text } from 'react-native';
 import { colorStyles } from '../../styles';
 
-const Button = ({ onPress, children }) => {
 
+type Props = {
+  onPress: Function,
+  children?: any,
+}
+
+const Button = ({ onPress, children } : Props) => {
+  
   return (
     <TouchableOpacity
       onPress={onPress}

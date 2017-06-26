@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { View, ActivityIndicator, StyleSheet, Text } from 'react-native';
 import { connect } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import { loginNavigation } from '../actions';
 import { colorStyles, textStyles } from '../styles';
@@ -40,7 +41,10 @@ class SplashScreen extends Component {
     return (
         <View style={styles.main}>
           <Text style={styles.text}>
-            MY APP SPLASH
+            <FormattedMessage
+              id="splash.label"
+              defaultMessage={'Splash'}
+              />
           </Text>
           <ActivityIndicator size="large" />
         </View>

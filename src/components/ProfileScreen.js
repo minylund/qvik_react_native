@@ -1,21 +1,43 @@
 //@flow
-import React from 'react';
+import React, { Component } from 'react';
 import { Text, View, StyleSheet, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { injectIntl, FormattedMessage } from 'react-intl';
 import { Button } from './common/Button';
 import { loginNavigation } from '../actions';
 import { colorStyles, textStyles } from '../styles';
 
 
-const ProfileScreen = (props) => (
-  <View style={styles.mainHolder}>
-    <Text style={styles.title}>Profile</Text>
-      <Button onPress={() => props.loginNavigation()}>
-        Logout
-      </Button>
-  </View>
-);
+class ProfileScreen extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.formatMessage = this.props.intl.formatMessage.bind(this);
+  }
+
+  render() {
+    return (
+      <View style={styles.mainHolder}>
+        <Text style={styles.title}>
+          <FormattedMessage
+            id="profile.label"
+            defaultMessage={'Profile'}
+            />
+        </Text>
+        <Button onPress={() => this.props.loginNavigation()}>
+          {this.formatMessage(
+            {
+              id: "logout.label",
+              defaultMessage: "Logout"
+            })
+          }
+        </Button>
+      </View>
+    );
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -25,7 +47,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(null, mapDispatchToProps)(ProfileScreen);
+export default connect(null, mapDispatchToProps)(injectIntl(ProfileScreen));
 
 const styles = StyleSheet.create({
   mainHolder: {
