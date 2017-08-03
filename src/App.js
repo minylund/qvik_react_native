@@ -3,6 +3,7 @@ import { NativeModules, Platform, Text } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
+import 'intl';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import fiLocale from 'react-intl/locale-data/fi';
 import svLocale from 'react-intl/locale-data/sv';
