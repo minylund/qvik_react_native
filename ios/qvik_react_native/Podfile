@@ -1,0 +1,22 @@
+platform :ios, '9.0'
+inhibit_all_warnings!
+
+target 'qvik_react_native' do
+    pod 'RNI18n', :path => '../node_modules/react-native-i18n'    
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

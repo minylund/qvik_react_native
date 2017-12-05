@@ -25,9 +25,9 @@ class App extends Component {
 
   getLocale () {
     if (Platform.OS === 'android') {
-      return NativeModules.I18nManager.localeIdentifier.replace(/_/, '-').split('-')[0];
+      //return NativeModules.I18nManager.localeIdentifier.replace(/_/, '-').split('-')[0];
     } else {
-      return NativeModules.SettingsManager.settings.AppleLocale.replace(/_/, '-').split('-')[0];
+      //return NativeModules.SettingsManager.settings.AppleLocale.replace(/_/, '-').split('-')[0];
     }
   }
 
@@ -38,7 +38,7 @@ class App extends Component {
         <IntlProvider
            locale={locale}
            textComponent={Text}
-           messages={translations[locale]}
+           messages={translations["fi"]}
            >
            <AppNavigation />
          </IntlProvider>
